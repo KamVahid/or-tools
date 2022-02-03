@@ -528,7 +528,6 @@ absl::Status AddSolutionHint(const MPModelProto& model, SCIP* scip,
 
   return absl::OkStatus();
 }
-
 }  // namespace
 
 // Returns "" iff the model seems valid for SCIP, else returns a human-readable

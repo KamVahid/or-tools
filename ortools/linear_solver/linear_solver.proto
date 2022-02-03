@@ -25,7 +25,6 @@
 //
 // Check ./linear_solver.h and Wikipedia for more detail:
 //   http://en.wikipedia.org/wiki/Linear_programming
-//
 
 syntax = "proto2";
 
@@ -33,7 +32,6 @@ option java_package = "com.google.ortools.linearsolver";
 option java_multiple_files = true;
 
 import "ortools/util/optional_boolean.proto";
-
 
 package operations_research;
 
@@ -432,7 +430,6 @@ message MPModelRequest {
   // If not specified, the time limit on the solver is the RPC's deadline_left.
   optional double solver_time_limit_seconds = 3;
 
-
   // If this is set, then EnableOutput() will be set on the internal MPSolver
   // that solves the model.
   // WARNING: if you set this on a request to prod servers, it will be rejected
@@ -456,12 +453,9 @@ message MPModelRequest {
   optional string solver_specific_parameters = 5;
   optional bool ignore_solver_specific_parameters_failure = 9 [default = false];
 
-
   // Advanced usage: model "delta". If used, "model" must be unset. See the
   // definition of MPModelDeltaProto.
   optional MPModelDeltaProto model_delta = 8;
-
-
 
   // Controls the recovery of additional solutions, if any, saved by the
   // underlying solver back in the MPSolutionResponse.additional_solutions.
@@ -471,9 +465,7 @@ message MPModelRequest {
   // These additional solutions may have a worse objective than the main
   // solution returned in the response.
   optional int32 populate_additional_solutions_up_to = 11 [default = 0];
-
 }
-
 
 // Status returned by the solver. They follow a hierarchical nomenclature, to
 // allow us to add more enum values in the future. Clients should use
@@ -557,7 +549,6 @@ enum MPSolverResponseStatus {
   // solver that doesn't support cancellation. status_str should contain a
   // description of the issue.
   MPSOLVER_INCOMPATIBLE_OPTIONS = 0x71;
-
 }
 
 message MPSolution {
@@ -631,5 +622,4 @@ message MPSolutionResponse {
   // additional solutions are different than the main solution described by the
   // above fields `objective_value` and `variable_value`.
   repeated MPSolution additional_solutions = 8;
-
 }

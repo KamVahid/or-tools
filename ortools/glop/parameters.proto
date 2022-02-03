@@ -91,7 +91,6 @@ message GlopParameters {
     MAROS = 3;
   }
 
-
   optional ScalingAlgorithm scaling_method = 57 [default = EQUILIBRATION];
 
   // PricingRule to use during the feasibility phase.
@@ -479,5 +478,4 @@ message GlopParameters {
   // evaluating large constraint with variables at their bound shouldn't cause
   // any overflow.
   optional double max_valid_magnitude = 199 [default = 1e30];
-
 }
